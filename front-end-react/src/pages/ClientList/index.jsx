@@ -70,8 +70,8 @@ export default function ClientList () {
           <div className='card'>
             <div className='card-header'>
               <h4>Dados dos Clientes
-                <Link to={'add-client'} className={'btn btn-primary btn-sm float-end'}>
-                  Cadastrar cliente
+                <Link to={'/add-client'} className={'btn btn-primary btn-sm float-end'}>
+                  Cadastrar
                 </Link>
               </h4>
             </div>

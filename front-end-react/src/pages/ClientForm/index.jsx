@@ -115,14 +115,14 @@ export default function ClassList() {
             <form onSubmit={handleRegister} method="post">
               <DoubleContainer>
                 <FormLabel title={"Nome Completo"} name="name" onChange={handleChange} value={customer.name || ''} error={isError.name} />
-                <FormLabel title={"Data de Nascimento"} name="birthday" onChange={handleChange} value={customer.birthday || ''} error={isErrorBirthday} onBlur={checkAge}/>
+                <FormLabel placeholder={'ex: 00/00/0000'} title={"Data de Nascimento"} name="birthday" onChange={handleChange} value={customer.birthday || ''} error={isErrorBirthday} onBlur={checkAge}/>
               </DoubleContainer>
               <DoubleContainer>
-                <FormLabel title={"Telefone"} name="phone" onChange={handleChange} value={customer.phone || ''} error={isError.phone} />
+                <FormLabel title={"Telefone"} name="phone" placeholder={"ex: (00) 00000-0000"} onChange={handleChange} value={customer.phone || ''} error={isError.phone} />
                 <FormLabel title={"CPF"} name="cpf" onChange={handleChange} value={customer.cpf || ''} error={isError.cpf}/>
               </DoubleContainer>
               <DoubleContainer>
-                <FormLabel title={"E-mail"} name="email" onChange={handleChange} value={customer.email || ''} error={isError.email} />
+                <FormLabel title={"E-mail"} placeholder={"ex: user@user.com"} name="email" onChange={handleChange} value={customer.email || ''} error={isError.email} />
                 <FormLabel title={"CEP"} name="cep" onChange={handleChange} value={customer.cep || ''} error={isErrorCep} onBlur={checkCep}/>
               </DoubleContainer>
                 <FormLabel title={"Endereço"} name="address" onChange={handleChange} value={useAddress || ''} error={isError.address} />
