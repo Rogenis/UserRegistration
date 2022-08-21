@@ -1,0 +1,54 @@
+version: '3.7'
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    tty: true
+    environment:
+      DB_CONNECTION: 'mysql'
+      DB_HOST: 'mysql'
+      DB_DATABASE: 'clients'
+      DB_USERNAME: 'root'
+      DB_PASSWORD:
+    ports:
+      - 8000:8000
+    volumes:
+      - ./backend:/app/backend
+    depends_on:
+      - mysql
+    networks:
+      - app
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - 3000:3000
+    volumes:
+      - ./frontend:/app/frontend
+    depends_on:
+      - backend
+    networks:
+      - app
+
+  mysql:
+    image: 'mariadb:latest'
+    container_name: shouts-laravel-db
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_DATABASE: '${DB_DATABASE}'
+      MYSQL_ROOT_PASSWORD: '${DB_PASSWORD}'
+      MYSQL_PASSWORD: '${DB_PASSWORD}'
+      MYSQL_USER: '${DB_USERNAME}'
+      MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
+    volumes:
+      - .dbdata:/var/lib/mysql
+    networks:
+      - app
+
+networks:
+  app:
+    driver: bridge

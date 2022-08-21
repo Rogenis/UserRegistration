@@ -57,8 +57,8 @@ export default function EditClient() {
     const cep = e.target.value.replace(/\D/g, '');
     fetch(`https://viacep.com.br/ws/${cep}/json`)
       .then(res => res.json()).then(data => {
+        setIsErrorCep('')
         if(data.erro === "true"){
-          console.log("md")
           setIsErrorCep('Informe um cep válido!')
           setUseAddress('')
           setUseDistrict('')
