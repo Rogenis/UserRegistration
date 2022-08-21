@@ -1,13 +1,11 @@
 # UserRegistration
 
 
-## Back End
-
-### Instalação
+### INstalação
 
 **Dependências**
-- Docker version 20.10.3
-- Docker-compose version 1.28.2
+- Docker version 20.10.7
+- Docker-compose version 1.25.0
 
 **Passos para rodar localmente**
 
