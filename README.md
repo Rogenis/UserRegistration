@@ -41,3 +41,20 @@
 - `make start`: Inicializa os containers da aplicação.
 - `make stop`: Suspende os containers da aplicação.
 - `make logs`: Mostra os logs dos containers relacionados à aplicação.
+
+### Sobre o projeto
+
+Desafio técnico a qual foi implementado features relacionadas a de criação de contas de usuário. 
+
+- A stack de tecnologia utilizada foi deLaravel para o Backend e React para frontEnd.
+- Para o banco de dados, foi usado o MySQl, com disto de MariaDB.
+- Durante o preenchimento dos campos o usuário deveria apresentar um endereço válido, com isso, também foi utilizado a API do serviço https://viacep.com.br, para validação de endereço do usuário.
+
+#### Implementação:
+1. Cadastrar usuário;
+2. Listar usuários;
+3. Editar usuário;
+4. Deletar usuário do banco
+5. Cadastro aceita apenas usuários do Amazonas
+6. Cadastro não aceita usuários menores de idade.
+7. Todos os campos devem ser obrigatórios.
