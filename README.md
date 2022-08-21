@@ -1,23 +1,43 @@
 # UserRegistration
 
-
-### INstalação
-
 **Dependências**
 - Docker version 20.10.7
 - Docker-compose version 1.25.0
 
 **Passos para rodar localmente**
 
-Obs: O processo do Postgres roda na porta 5432, desse modo, antes de executar os comandos abaixo, é recomendado verificar se possui algum processo  vinculado à porta 5432. Isto pode ser feito atraves do comando `lsof -i tcp:5432`, e caso tenha algum processo sendo executado, use `kill {pid}` para parar o processo. Após isso, execute os comandos abaixo:
-
-1. Instale as depedências citadas acima. 
-2. Execute o comando `make build`, dentro do diretório (Irá subir os containers).
-3. Execute o comando `make db-build`, irá construir o banco de dados. 
-4. Após isso, acesse através do browser ou por ferramentas de requisições (ex: insomnia) o endpoint `localhost:3000/health`.  
-5. Desse modo, é esperado que seja retornado um resultado JSON: 
+1. Adiiconar arquivo .env no diretório, as informações do banco de dado, conforme o .env.example:
 ```
 {
-  "status": "OK"
+  DB_CONNECTION=mysql
+  DB_HOST=127.0.0.1
+  DB_PORT=3306
+  DB_DATABASE=clients
+  DB_USERNAME=root
+  DB_PASSWORD=
 }
 ```
+
+2. Execute o comando `make start`, dentro do diretório (Irá subir os containers).
+- Caso as depedências dos projetos não instalem corretamente, basta seguir os passos, que instalará as depedências dos projetos corretamente:
+```
+  cd backend
+  composer insatll
+  cd ..
+  cd frontend
+  npm install
+```
+3. Construir o banco de dados: 
+- docker exec -it shouts-laravel-db mysql -u 'user' -p
+- create database clients;
+- docker exec -it userregistration_backend_1 sh
+- php artisan migrate
+
+4. Acessa localhost:3000
+
+## Comandos
+- `make build`: Habilita todos os containers e images necessários para rodar a aplicação.
+- `make rebuild`: Desabilita os containers da aplicação, apaga os dados remanescentes e habilita novamente os containers.
+- `make start`: Inicializa os containers da aplicação.
+- `make stop`: Suspende os containers da aplicação.
+- `make logs`: Mostra os logs dos containers relacionados à aplicação.
