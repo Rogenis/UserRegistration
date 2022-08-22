@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import swal from  'sweetalert'
 import { Link } from 'react-router-dom';
+import { Card, CardBody, CardHeader, Container } from './styles'
 
 export default function ClientList () {
   var client_HTMLTABLE = ''
@@ -24,7 +25,6 @@ export default function ClientList () {
     const thidClickedFunda = e.currentTarget;
     thidClickedFunda.innerText = "Deleting";
     const res = await axios.delete(`http://localhost:8000/api/delete-client/${id}`);
-    
     if(res.data.status === 200){
       thidClickedFunda.closest("tr").remove()
       swal({
@@ -64,18 +64,17 @@ export default function ClientList () {
   }
 
   return (
-    <div className='container'>
-      <div className='row'>
+    <Container>
         <div className='col-md-12'>
-          <div className='card'>
-            <div className='card-header'>
+          <Card>
+            <CardHeader>
               <h4>Dados dos Clientes
                 <Link to={'/add-client'} className={'btn btn-primary btn-sm float-end'}>
                   Cadastrar
                 </Link>
               </h4>
-            </div>
-            <div className='card-body'>
+            </CardHeader>
+            <CardBody>
               <table className='table table-bordered table-striped'>
                 <thead>
                   <tr>
@@ -95,10 +94,9 @@ export default function ClientList () {
                   {client_HTMLTABLE}
                 </tbody>
               </table>
-            </div>
-          </div>
+            </CardBody>
+          </Card>
         </div>
-      </div>
-    </div>
+    </Container>
   );
 }

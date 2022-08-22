@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   width: 100%;
-  height: 750%;
+  height: 745px;
   padding-right: 3rem;
   padding-left: 3rem;
   margin-right: auto;
@@ -15,17 +15,15 @@ export const Container = styled.div`
 `;
 
 export const Card = styled.div`
+  margin-bottom: 460px;
   position: relative;
   display: flex;
   flex-direction: column;
-  margin-top: 110px;
-  margin-bottom: 225px;
   min-width: 0;
   word-wrap: break-word;
   background-color: #fff;
   background-clip: border-box;
   border: 1px solid rgba(0,0,0,.125);
-  border-radius: 0.25rem;
 `;
 
 export const CardHeader = styled.div`
@@ -40,10 +38,4 @@ export const CardBody = styled.div`
   margin-bottom: 0;
   background-color: rgba(0,0,0,.03);
   border-bottom: 1px solid rgba(0,0,0,.125);
-`;
-
-export const DoubleContainer = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1.2rem;
 `;
