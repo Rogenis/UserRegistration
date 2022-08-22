@@ -47,7 +47,7 @@
 Desafio técnico a qual foi implementado features relacionadas a de criação de contas de usuário. 
 
 - A stack de tecnologia utilizada foi deLaravel para o Backend e React para frontEnd.
-- Para o banco de dados, foi usado o MySQl, com disto de MariaDB.
+- Para o banco de dados, foi usado o MySQL, com disto de MariaDB.
 - Durante o preenchimento dos campos o usuário deveria apresentar um endereço válido, com isso, também foi utilizado a API do serviço https://viacep.com.br, para validação de endereço do usuário.
 
 #### Implementação:
@@ -58,3 +58,11 @@ Desafio técnico a qual foi implementado features relacionadas a de criação de
 5. Cadastro aceita apenas usuários do Amazonas
 6. Cadastro não aceita usuários menores de idade.
 7. Todos os campos devem ser obrigatórios.
+
+
+#### C4 Model
+![Model_System_Container](https://user-images.githubusercontent.com/49156356/185821012-98930017-3262-40b1-95bd-727f8c8a8ff7.png)
+![Model_System_Context](https://user-images.githubusercontent.com/49156356/185821022-849f1bf1-e743-4340-a2bc-03b731428e7b.png)
+
+
+
